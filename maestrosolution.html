@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro Solution | AgTech</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --agro-green: #7cfc00;
+            --dark-bg: #0d1117;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            background: #000;
+            overflow: hidden;
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+
+        .hero-content { position: relative; z-index: 10; padding-left: 10%; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; }
+        .hero h1 span { color: var(--agro-green); }
+
+        /* --- SECCIÓN SERVICIOS --- */
+        .solutions-section { padding: 80px 0; }
+
+        .tech-card {
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #333;
+            background-color: #1a1d23; /* Color de respaldo si no carga la imagen */
+            transition: transform 0.3s ease;
+        }
+
+        .tech-card:hover { transform: translateY(-10px); border-color: var(--agro-green); }
+
+        /* CONFIGURACIÓN DE RUTAS DE IMAGEN */
+        .card-heladas { 
+            background: url('./app-heladas.jpg') no-repeat center center; 
+            background-size: cover; 
+        }
+        .card-plagas { 
+            background: url('./app-plagas.jpg') no-repeat center center; 
+            background-size: cover; 
+        }
+        .card-invernadero { 
+            background: url('./app-invernadero.jpg') no-repeat center center; 
+            background-size: cover; 
+        }
+
+        .card-overlay {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.3) 60%, transparent 100%);
+        }
+
+        .tech-card h3 { color: var(--agro-green); font-weight: 700; margin-bottom: 10px; }
+        .tech-card p { font-size: 0.95rem; line-height: 1.5; color: #fff; }
+
+        footer { padding: 40px 0; text-align: center; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="video-maestro.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>MAESTRO<br><span>SOLUTION</span></h1>
+            <p>Tecnología para el Agro</p>
+        </div>
+    </header>
+
+    <section class="container solutions-section">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="tech-card card-heladas">
+                    <div class="card-overlay">
+                        <h3>❄️ Heladas</h3>
+                        <p>Sensores IoT con alertas críticas al celular.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tech-card card-plagas">
+                    <div class="card-overlay">
+                        <h3>📱 App Plagas</h3>
+                        <p>Monitoreo digital y mapas de calor en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tech-card card-invernadero">
+                    <div class="card-overlay">
+                        <h3>⚙️ Automatización</h3>
+                        <p>Control inteligente de invernaderos y riego.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>maestrosolution.cl | [Tu Nombre]</p>
+    </footer>
+
+</body>
+</html>
